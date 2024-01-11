@@ -1,0 +1,21 @@
+{%  extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', path='css/second.css') }}">
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+    <div class="container">
+        <h2>Second Page</h2>
+    </div>
+
+    <div class="container">
+        <p>{{ second_var }}</p>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}
