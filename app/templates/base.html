@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+{# TODO: Add in-secure block check for html files when http called for hosted on server #}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='images/favicon.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/common.css') }}">
+</head>
+{% endblock %}
+
+{% block body %}
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark" style="background-color: #003366;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', path='images/carmaxlinksicon.png') }}" width="80px" height="40px" id=logo
+                 alt="Carlinks logo image" style="margin-left: 10px;"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" id="indexPage" aria-current="page" href="/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="secondPage" aria-current="page" href="/second">Second</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="apiJson" href="/api">Api's</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', path='js/common.js') }}"></script>
+    {# TODO: Update link href to local bootstrap css and js #}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+{% endblock %}
+
+</html>
