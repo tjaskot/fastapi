@@ -1,0 +1,54 @@
+# Secret files if created from local user
+secret.txt
+secrets.txt
+creds.txt
+credentials.txt
+secrets
+creds
+secret
+cred
+
+# Log generated files
+logs
+*.log
+
+# Linux runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Platform related build files
+.vercel
+
+# Python and PyVenv
+__pycache__
+venv
+
+# Node.js and modules
+.npm
+node_modules/
+node_modules_backup/
+jspm_packages/
+**/bin/
+**/obj/
+
+# Compressed resources
+*.tgz
+
+# Environment and properties related ci files
+.env
+
+# Local build files
+build/
+public/
+
+# Visual Studio code files
+.vscode/
+.vs
+.vsp
+.vspx
+
+# Intellij files
+*.iml
+.idea
