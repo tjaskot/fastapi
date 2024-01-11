@@ -1,0 +1,21 @@
+{%  extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', path='css/index.css') }}">
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+    <div class="container">
+        <h2>Index Page for Nginx Templates</h2>
+    </div>
+
+    <div class="container">
+        <p>{{ index_var }}</p>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}
