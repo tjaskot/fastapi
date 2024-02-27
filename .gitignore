@@ -23,6 +23,8 @@ pids
 
 # Python and PyVenv
 __pycache__
+*/__pycache__
+app/__pycache__
 venv
 
 # Node.js and modules
