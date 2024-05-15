@@ -1,5 +1,6 @@
 # Fast API Docs : https://fastapi.tiangolo.com/
 # import uvicorn  # When using debugging, uncomment debug if statement at bottom of file.
+import ssl
 from fastapi import FastAPI, Request, HTTPException, Form
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
@@ -7,7 +8,13 @@ from fastapi.templating import Jinja2Templates
 from dotenv import dotenv_values
 
 
-app = FastAPI()
+app = FastAPI(
+    title="Portal",
+    description="Portal POC",
+    version="0.1"
+)
+ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+ssl_context.load_cert_chain('/etc/pki/nginx/server.crt', keyfile='/etc/pki/nginx/private/server.key')
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
