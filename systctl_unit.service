@@ -1,0 +1,12 @@
+[Unit]
+Description=FastAPI ASGI front end and api microservice ran under systemd configuration
+After=network.target
+
+[Service]
+User=nonproduser
+WorkingDirectory=/home/nonproduser/portal-poc
+ExecStart=python -m pipenv run uvicorn app.main:app --host 0.0.0.0 --port 8081 --ssl-keyfile /etc/pki/nginx/private/server.key --ssl-certfile /etc/pki/nginx/server.crt
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
